@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Albert Ayitey-Adjin — Data / Business Analyst</title>
+<meta name="description" content="Albert Ayitey-Adjin — early-career Data / Business Analyst. SQL, Python, and Excel. I turn raw data into clear answers people can act on." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1726;
+    --ink-2:#16213A;
+    --soft:#46536B;
+    --paper:#F3F5F3;
+    --card:#FFFFFF;
+    --line:#E1E6E4;
+    --accent:#0F766E;
+    --accent-d:#0B5A53;
+    --signal:#2DD4BF;
+    --paper-on-dark:#EFF2EF;
+    --soft-on-dark:#93A1B0;
+    --maxw:1080px;
+    --r:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Inter",system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.1;margin:0;letter-spacing:-0.02em;}
+  a{color:inherit;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:.78rem;letter-spacing:.04em;text-transform:lowercase;
+    color:var(--accent);font-weight:500;margin-bottom:14px;display:block;
+  }
+  .eyebrow.on-dark{color:var(--signal);}
+
+  /* ---------- nav ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(14,23,38,.92);backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .brand{font-family:"IBM Plex Mono",monospace;font-weight:600;color:var(--paper-on-dark);font-size:.95rem;text-decoration:none;}
+  .brand b{color:var(--signal);}
+  .navlinks{display:flex;gap:26px;}
+  .navlinks a{font-family:"IBM Plex Mono",monospace;font-size:.84rem;color:var(--soft-on-dark);text-decoration:none;transition:color .2s;}
+  .navlinks a:hover{color:var(--paper-on-dark);}
+  @media(max-width:620px){.navlinks{display:none;}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background:
+      radial-gradient(1100px 500px at 78% -10%, rgba(45,212,191,.10), transparent 60%),
+      var(--ink);
+    color:var(--paper-on-dark);
+    padding:78px 0 88px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;gap:40px;}}
+  .hero h1{font-size:clamp(2.3rem,5.6vw,3.6rem);font-weight:700;color:#fff;}
+  .hero .role{
+    font-family:"IBM Plex Mono",monospace;color:var(--signal);
+    font-size:clamp(.95rem,2.2vw,1.1rem);margin-top:14px;font-weight:500;
+  }
+  .hero .lede{color:var(--soft-on-dark);font-size:1.12rem;max-width:34ch;margin-top:20px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;font-size:.86rem;font-weight:500;
+    text-decoration:none;padding:11px 18px;border-radius:9px;transition:transform .15s,background .2s,border-color .2s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--signal);color:#06302b;font-weight:600;}
+  .btn-primary:hover{transform:translateY(-2px);background:#5eead4;}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);color:var(--paper-on-dark);}
+  .btn-ghost:hover{border-color:var(--signal);color:#fff;}
+
+  /* ---------- filter signature ---------- */
+  .filter-card{
+    background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.09);
+    border-radius:var(--r);padding:20px;
+  }
+  .filter-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;}
+  .filter-head .k{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--soft-on-dark);}
+  .filter-head .v{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--signal);}
+  .grid-dots{display:grid;grid-template-columns:repeat(20,1fr);gap:5px;}
+  .dot{aspect-ratio:1;border-radius:2px;background:rgba(147,161,176,.16);transition:background .5s ease, transform .5s ease;}
+  .dot.on{background:var(--signal);box-shadow:0 0 8px rgba(45,212,191,.5);transform:scale(1.05);}
+  .filter-foot{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--soft-on-dark);margin-top:14px;line-height:1.5;}
+  .filter-foot b{color:var(--paper-on-dark);font-weight:600;}
+
+  /* ---------- sections ---------- */
+  section{padding:74px 0;}
+  .section-head{margin-bottom:36px;max-width:60ch;}
+  .section-head h2{font-size:clamp(1.6rem,4vw,2.1rem);font-weight:600;}
+  .section-head p{color:var(--soft);margin-top:12px;font-size:1.05rem;}
+
+  /* about */
+  .about p{font-size:1.15rem;color:var(--ink-2);max-width:62ch;}
+  .about strong{color:var(--accent-d);font-weight:600;}
+
+  /* skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+  .skill-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;}
+  .skill-card h3{font-size:.82rem;font-family:"IBM Plex Mono",monospace;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:600;margin-bottom:14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:.8rem;background:var(--paper);border:1px solid var(--line);padding:5px 10px;border-radius:7px;color:var(--ink-2);}
+  .skill-card.learning{background:linear-gradient(180deg,#0f766e08,transparent);border-style:dashed;}
+  .skill-card.learning h3{color:var(--soft);}
+  .skill-card.learning .chip{border-style:dashed;color:var(--soft);}
+
+  /* projects */
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;margin-bottom:18px;}
+  .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;}
+  .proj h3{font-size:1.3rem;font-weight:600;}
+  .proj .stack{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--accent);margin-top:6px;}
+  .proj .desc{color:var(--ink-2);margin:16px 0 0;max-width:70ch;}
+  .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+  .pill{font-family:"IBM Plex Mono",monospace;font-size:.76rem;padding:5px 11px;border-radius:20px;display:inline-flex;align-items:center;gap:7px;}
+  .pill.done{background:#0f766e14;color:var(--accent-d);}
+  .pill.next{background:#f4f6f4;border:1px dashed var(--line);color:var(--soft);}
+  .pill::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;}
+  .proj-links{margin-top:20px;display:flex;gap:18px;flex-wrap:wrap;}
+  .proj-links a{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s;}
+  .proj-links a:hover{border-color:var(--accent);}
+
+  /* experience */
+  .xp{border-left:2px solid var(--line);padding:4px 0 4px 24px;margin-left:6px;}
+  .xp-item{margin-bottom:26px;position:relative;}
+  .xp-item::before{content:"";position:absolute;left:-31px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent);}
+  .xp-item h3{font-size:1.08rem;font-weight:600;}
+  .xp-item .meta{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--soft);margin:4px 0 10px;}
+  .xp-item ul{margin:0;padding-left:18px;color:var(--ink-2);}
+  .xp-item li{margin-bottom:5px;}
+
+  /* edu row */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:680px){.duo{grid-template-columns:1fr;}}
+  .mini{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;}
+  .mini h3{font-size:1.05rem;font-weight:600;}
+  .mini .meta{font-family:"IBM Plex Mono",monospace;font-size:.78rem;color:var(--soft);margin:6px 0 10px;}
+  .mini p{margin:0;color:var(--ink-2);font-size:.96rem;}
+
+  /* contact */
+  .contact{background:var(--ink);color:var(--paper-on-dark);border-radius:0;}
+  .contact h2{color:#fff;font-size:clamp(1.7rem,4vw,2.3rem);}
+  .contact p{color:var(--soft-on-dark);max-width:48ch;margin-top:14px;font-size:1.08rem;}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px;}
+
+  footer{background:var(--ink-2);color:var(--soft-on-dark);font-family:"IBM Plex Mono",monospace;font-size:.78rem;padding:22px 0;}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px;}
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">albert<b>.</b>analyst</a>
+      <div class="navlinks">
+        <a href="#about">about</a>
+        <a href="#skills">skills</a>
+        <a href="#work">work</a>
+        <a href="#contact">contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow on-dark">// data / business analyst</span>
+      <h1>Albert<br>Ayitey-Adjin</h1>
+      <div class="role">SQL &nbsp;·&nbsp; Python &nbsp;·&nbsp; Excel</div>
+      <p class="lede">I turn raw, messy data into clear answers people can act on.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#work">View work</a>
+        <a class="btn btn-ghost" href="mailto:albertayiteyadjin@gmail.com">Get in touch</a>
+      </div>
+    </div>
+    <div class="filter-card" aria-hidden="true">
+      <div class="filter-head">
+        <span class="k">dataset.players</span>
+        <span class="v" id="counter">300+ rows</span>
+      </div>
+      <div class="grid-dots" id="dots"></div>
+      <div class="filter-foot">WHERE age &lt; 24 AND minutes &gt; 900<br>→ <b>under 15 viable targets</b> · 95%+ noise filtered</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">// about</span><h2>The short version</h2></div>
+    <p class="reveal">I'm an early-career <strong>Data / Business Analyst</strong> with a B.S. in Computer Science (top 10% of my class) and hands-on skills in <strong>SQL, Python, and Excel</strong>. I build data pipelines, write multi-condition queries, and shape KPI-driven reports that turn raw data into decisions. Three years in technical operations taught me how to make data actually useful — analyzing patterns, building recurring reports, and delivering results people can measure. I'm a fast learner, a clear communicator, and CompTIA Security+ certified.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:linear-gradient(180deg,#fff,var(--paper));border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">// toolkit</span><h2>What I work with</h2></div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3>Querying &amp; languages</h3>
+        <div class="chips"><span class="chip">SQL</span><span class="chip">SQLite</span><span class="chip">Python</span><span class="chip">Java</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Analysis</h3>
+        <div class="chips"><span class="chip">Data cleaning</span><span class="chip">ETL</span><span class="chip">EDA</span><span class="chip">Data modeling</span><span class="chip">KPI reporting</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>Tools</h3>
+        <div class="chips"><span class="chip">Excel · PivotTables</span><span class="chip">Git / GitHub</span><span class="chip">VS Code</span></div>
+      </div>
+      <div class="skill-card learning reveal">
+        <h3>Currently learning</h3>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Statistics</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">// selected work</span><h2>Projects</h2><p>Where I prove the craft — not just list the tools.</p></div>
+
+    <div class="proj reveal">
+      <div class="proj-top">
+        <div>
+          <h3>Chelsea FC Midfield Recruitment Analytics</h3>
+          <div class="stack">SQL (SQLite) · Git</div>
+        </div>
+      </div>
+      <p class="desc">An end-to-end SQL workflow that scouts undervalued central midfielders. I ingested and cleaned 300+ Premier League player records from FBref into an analysis-ready SQLite table, then wrote multi-condition queries to narrow the field to under 15 viable targets — Under-24 players with 900+ minutes — filtering out 95%+ of the dataset's noise to isolate the candidates worth a closer look.</p>
+      <div class="pills">
+        <span class="pill done">Built — SQL pipeline &amp; data cleaning</span>
+        <span class="pill done">Built — multi-condition filtering queries</span>
+        <span class="pill next">Next — KPI scoring model</span>
+        <span class="pill next">Next — interactive Power BI dashboard</span>
+      </div>
+      <div class="proj-links">
+        <!-- TODO: replace # with your repo URL once it's public -->
+        <a href="#">View on GitHub →</a>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="proj-top">
+        <div>
+          <h3>OptiStock — investment insight tool</h3>
+          <div class="stack">Python</div>
+        </div>
+      </div>
+      <p class="desc">A Python project exploring how data and modeling can help newer investors make sense of the stock market. A working sandbox for applying analysis to financial data — and the reason I'm now sharpening my statistics and dashboarding skills.</p>
+      <div class="proj-links">
+        <a href="https://github.com/Al1374525/optiStock" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:linear-gradient(180deg,var(--paper),#fff);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">// experience</span><h2>Where I've delivered</h2></div>
+    <div class="xp">
+      <div class="xp-item reveal">
+        <h3>IT Support Professional — Victory Bible Church International</h3>
+        <div class="meta">Lorton, VA · May 2022 – Present</div>
+        <ul>
+          <li>Analyzed three years of support-ticket data in Excel to spot recurring failure patterns, building recurring reports that drove preventive maintenance and cut ticket volume by 25%.</li>
+          <li>Designed status-at-a-glance reporting on infrastructure health, tracking uptime KPIs and sustaining 99.9% uptime across departments.</li>
+          <li>Turned ticket-trend findings into targeted training that lifted user self-sufficiency by 40%.</li>
+        </ul>
+      </div>
+      <div class="xp-item reveal">
+        <h3>Resident Assistant — Global Friendship House</h3>
+        <div class="meta">Norfolk, VA · Jun 2022 – Aug 2023</div>
+        <ul>
+          <li>Analyzed resident feedback to redesign event programming, increasing participation by 25%.</li>
+          <li>Maintained 100% incident-reporting accuracy through detailed logs and compliance checks.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION + CERTS -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="eyebrow">// credentials</span><h2>Education &amp; certifications</h2></div>
+    <div class="duo">
+      <div class="mini reveal">
+        <h3>B.S. in Computer Science</h3>
+        <div class="meta">Old Dominion University · Norfolk, VA · 2024</div>
+        <p>Graduated top 10%. Coursework: databases &amp; SQL, algorithms, data structures, statistics, cybersecurity.</p>
+      </div>
+      <div class="mini reveal">
+        <h3>CompTIA Security+</h3>
+        <div class="meta">2026</div>
+        <p>Validates a security-minded foundation in data handling, systems, and risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow on-dark">// let's talk</span>
+    <h2>Open to entry-level analyst roles</h2>
+    <p>If you're building a team and need someone who can take raw data and hand back a decision — I'd love to connect.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:albertayiteyadjin@gmail.com">albertayiteyadjin@gmail.com</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/albert-a-9995131ab" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/Al1374525" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Albert Ayitey-Adjin · Lorton, VA</span>
+    <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+  // Filter signature: 200 dots, ~12 resolve to "signal"
+  (function(){
+    var grid = document.getElementById('dots');
+    if(!grid) return;
+    var total = 200;
+    var signalIdx = new Set();
+    while(signalIdx.size < 12){ signalIdx.add(Math.floor(Math.random()*total)); }
+    var frag = document.createDocumentFragment();
+    var dots = [];
+    for(var i=0;i<total;i++){
+      var d = document.createElement('div');
+      d.className = 'dot';
+      frag.appendChild(d);
+      dots.push(d);
+    }
+    grid.appendChild(frag);
+
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var counter = document.getElementById('counter');
+    function light(){
+      dots.forEach(function(d,i){ if(signalIdx.has(i)) d.classList.add('on'); });
+      if(counter) counter.textContent = '15 rows';
+    }
+    if(reduce){ light(); }
+    else { setTimeout(light, 700); }
+  })();
+
+  // Scroll reveal
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+    },{threshold:0.12});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  document.getElementById('year').textContent = '© ' + new Date().getFullYear();
+</script>
+</body>
+</html>
