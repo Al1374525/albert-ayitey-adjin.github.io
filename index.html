@@ -1,128 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Albert Ayitey-Adjin — Data / Business Analyst</title>
-<meta name="description" content="Albert Ayitey-Adjin — early-career Data / Business Analyst. SQL, Python, and Excel. I turn raw data into clear answers people can act on." />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Albert Ayitey-Adjin, software engineer. Projects, experience, skills and resume.">
+<title>Albert Ayitey-Adjin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: dark;
+  --ink:#0A0C16;
+  --panel:#111528;
+  --panel-2:#171C36;
+  --line:#26305A;
+  --red:#E62429;
+  --red-soft:#FF5A5F;
+  --blue:#2B4CB0;
+  --blue-soft:#8EA5FF;
+  --text:#ECEFFA;
+  --muted:#9CA5C7;
+  --display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;
+  --body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:20px}
+a{color:var(--blue-soft);text-decoration:none}
+a:hover{color:#fff;text-decoration:underline}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red-soft);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1000px;margin-inline:auto}
+
+/* top bar */
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;flex-wrap:wrap}
+.mark{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.06em;text-transform:uppercase}
+.mark b{color:var(--red)}
+.nav{display:flex;gap:6px 22px;flex-wrap:wrap;font-family:var(--mono);font-size:13px}
+.nav a{color:var(--muted)}
+.nav a:hover{color:var(--text);text-decoration:none}
+
+/* hero */
+.hero{position:relative;padding-block:56px 64px;border-top:3px solid var(--red);overflow:hidden}
+.hero::after{content:"";position:absolute;right:-90px;top:-40px;width:520px;height:520px;pointer-events:none;opacity:.55;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-100 -100 200 200' fill='none' stroke='%232B4CB0' stroke-width='.6'%3E%3Cg%3E%3Cpath d='M0 0L100 0M0 0L86.6 50M0 0L50 86.6M0 0L0 100M0 0L-50 86.6M0 0L-86.6 50M0 0L-100 0M0 0L-86.6 -50M0 0L-50 -86.6M0 0L0 -100M0 0L50 -86.6M0 0L86.6 -50'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M20 0Q20 5 17.3 10Q10 17.3 5 17.3Q0 20 -5 17.3Q-10 17.3 -17.3 10Q-20 5 -20 0Q-20 -5 -17.3 -10Q-10 -17.3 -5 -17.3Q0 -20 5 -17.3Q10 -17.3 17.3 -10Q20 -5 20 0Z'/%3E%3Cpath d='M40 0Q40 10 34.6 20Q20 34.6 10 34.6Q0 40 -10 34.6Q-20 34.6 -34.6 20Q-40 10 -40 0Q-40 -10 -34.6 -20Q-20 -34.6 -10 -34.6Q0 -40 10 -34.6Q20 -34.6 34.6 -20Q40 -10 40 0Z'/%3E%3Cpath d='M62 0Q62 15 53.7 31Q31 53.7 15 53.7Q0 62 -15 53.7Q-31 53.7 -53.7 31Q-62 15 -62 0Q-62 -15 -53.7 -31Q-31 -53.7 -15 -53.7Q0 -62 15 -53.7Q31 -53.7 53.7 -31Q62 -15 62 0Z'/%3E%3Cpath d='M86 0Q86 20 74.5 43Q43 74.5 20 74.5Q0 86 -20 74.5Q-43 74.5 -74.5 43Q-86 20 -86 0Q-86 -20 -74.5 -43Q-43 -74.5 -20 -74.5Q0 -86 20 -74.5Q43 -74.5 74.5 -43Q86 -20 86 0Z'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain}
+.hero>*{position:relative;z-index:1}
+.eyebrow{font-family:var(--mono);font-size:13px;color:var(--red-soft);letter-spacing:.08em;text-transform:uppercase;margin:0 0 14px}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(52px,11vw,104px);line-height:.92;letter-spacing:.005em;text-transform:uppercase;margin:0 0 22px;text-wrap:balance}
+h1 .r{color:var(--red)}
+.lede{max-width:60ch;font-size:18px;color:var(--text);margin:0 0 26px}
+.lede span{color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:.06em;text-transform:uppercase;padding:10px 22px;border:2px solid var(--red);color:#fff;background:var(--red);transition:background .15s,color .15s}
+.btn:hover{background:transparent;color:var(--red-soft);text-decoration:none}
+.btn.alt{background:transparent;border-color:var(--blue);color:var(--blue-soft)}
+.btn.alt:hover{background:var(--blue);color:#fff}
+
+/* sections */
+section{padding-block:52px;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,48px);letter-spacing:.03em;text-transform:uppercase;line-height:1;margin:0 0 6px}
+h2::after{content:"";display:block;width:56px;height:4px;background:var(--red);margin-top:10px}
+.sub{color:var(--muted);margin:14px 0 30px;max-width:62ch}
+.mono{font-family:var(--mono)}
+
+/* tags */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;padding:0;list-style:none}
+.tags li{font-family:var(--mono);font-size:12.5px;padding:3px 10px;border:1px solid var(--line);background:var(--panel-2);color:var(--blue-soft)}
+.tags.skill li{border-color:#3A2A3C;color:#FFB3B5}
+.tags-label{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin:18px 0 -6px}
+
+/* projects */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--blue);padding:26px 26px 28px}
+.card.first{border-top-color:var(--red)}
+.card h3{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:.03em;text-transform:uppercase;line-height:1.05;margin:0 0 4px}
+.meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0 0 14px}
+.card ul,.job ul{margin:0;padding-left:20px}
+.card li,.job li{margin-bottom:8px;color:#D5DAF0}
+.card li::marker,.job li::marker{color:var(--red)}
+.fix{margin-top:16px;padding:12px 14px;background:var(--panel-2);border-left:3px solid var(--red);font-size:14.5px;color:#D5DAF0}
+.fix b{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--red-soft);display:block;margin-bottom:4px}
+
+/* experience */
+.job{display:grid;grid-template-columns:200px 1fr;gap:8px 32px;padding-block:24px;border-top:1px solid var(--line)}
+.job:first-of-type{border-top:0;padding-top:0}
+.when{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.job h3{font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.03em;text-transform:uppercase;margin:0}
+.job .org{color:var(--blue-soft);margin:0 0 12px}
+@media (max-width:640px){.job{grid-template-columns:1fr}}
+
+/* skills */
+.skills{display:grid;gap:22px 32px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.skills h3{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-soft);margin:0 0 4px}
+.skills p{margin:0;color:#D5DAF0}
+
+/* resume */
+.resume{background:var(--panel);border:1px solid var(--line);padding:clamp(20px,4vw,40px)}
+.resume h3{font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:.04em;text-transform:uppercase;margin:0 0 2px}
+.resume .rl{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:0 0 4px}
+.resume h4{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:.08em;text-transform:uppercase;color:var(--red-soft);border-bottom:1px solid var(--line);padding-bottom:4px;margin:24px 0 10px}
+.resume p{margin:0 0 8px;color:#D5DAF0;font-size:15px}
+.resume .item{margin:0 0 4px;font-weight:600;font-size:15px}
+.resume .item span{font-weight:400;color:var(--muted);font-family:var(--mono);font-size:12.5px}
+.resume ul{margin:0 0 12px;padding-left:20px;font-size:14.5px;color:#D5DAF0}
+.resume li{margin-bottom:5px}
+.resume li::marker{color:var(--red)}
+.tech{font-family:var(--mono);font-size:12.5px;color:var(--blue-soft);margin:0 0 6px}
+.tech::before{content:"Tech: ";color:var(--muted)}
+.tech.skill{color:#FFB3B5}
+.tech.skill::before{content:"Skills applied: "}
+
+/* contact */
+.contact{display:grid;gap:12px;font-family:var(--mono);font-size:15px}
+.contact div{display:flex;flex-wrap:wrap;gap:4px 16px}
+.contact dt{color:var(--muted);min-width:90px}
+.contact dd{margin:0;user-select:all;word-break:break-all}
+.contact dl{margin:0;display:grid;gap:10px}
+.copy{font-family:var(--mono);font-size:12px;background:transparent;color:var(--blue-soft);border:1px solid var(--line);padding:2px 10px;cursor:pointer}
+.copy:hover{border-color:var(--red);color:#fff}
+footer{padding-block:30px 40px;border-top:3px solid var(--blue);color:var(--muted);font-family:var(--mono);font-size:12.5px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
+
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <nav>
-      <a class="brand" href="#top">albert<b>.</b>analyst</a>
-      <div class="navlinks">
-        <a href="#about">about</a>
-        <a href="#skills">skills</a>
-        <a href="#work">work</a>
-        <a href="#contact">contact</a>
-      </div>
+<div class="wrap">
+  <header class="bar">
+    <div class="mark">A<b>.</b>Ayitey-Adjin</div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#resume">Resume</a><a href="#contact">Contact</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <span class="eyebrow on-dark" id="eyebrow-role"></span>
-      <h1 id="hero-name"></h1>
-      <div class="role" id="hero-role"></div>
-      <p class="lede" id="hero-lede"></p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#work">View work</a>
-        <a class="btn btn-ghost" data-email href="#">Get in touch</a>
+  <main>
+    <div class="hero">
+      <p class="eyebrow">Software Engineer · Lorton, VA · Open to relocation</p>
+      <h1>I build software that<br><span class="r">keeps working.</span></h1>
+      <p class="lede">B.S. in Computer Science, Old Dominion University. I like reliable systems: monitoring and alerting, well-tested Python, and full-stack apps on a solid SQL foundation. <span>CompTIA Security+ certified and eligible to obtain a Secret clearance.</span></p>
+      <div class="cta">
+        <a class="btn" href="#projects">See my projects</a>
+        <a class="btn alt" href="#resume">Read my resume</a>
       </div>
     </div>
-    <div class="terminal" aria-hidden="true">
-      <div class="term-bar">
-        <span></span><span></span><span></span>
-        <span class="term-title">albert@analytics ~ sqlite3 scouting.db</span>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="sub">Two projects, each with the tools I used and the problems I ran into.</p>
+      <div class="grid">
+        <article class="card first">
+          <h3>Environmental Early-Warning Anomaly Detector</h3>
+          <p class="meta">2026 – Present · Solo project</p>
+          <ul>
+            <li>A Python system that catches slow failures, such as a room gradually losing heat, by comparing live sensor readings with a rolling baseline and raising alerts.</li>
+            <li>Five single-purpose components (sensor, rolling window, detector, alerter, monitor) wired together with dependency injection, so the simulated sensor can be swapped for real hardware in one line.</li>
+            <li>Detection logic lives in pure functions covered by unit tests. Errors raise explicit exceptions instead of silent defaults.</li>
+          </ul>
+          <div class="fix"><b>Three bugs I fixed</b>Baseline drift that silenced active alerts (baseline now freezes during an alert). Alerts that never cleared after recovery. Alert flicker at the threshold (fixed with hysteresis).</div>
+          <ul class="tags" aria-label="Tech used">
+            <li>Python</li><li>OOP</li><li>Dependency injection</li><li>Modular design</li><li>Unit testing</li><li>Anomaly detection</li><li>Monitoring &amp; alerting</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>BetterSwipe</h3>
+          <p class="meta">Dec 2023 – Dec 2024 · Senior capstone, team of 3</p>
+          <ul>
+            <li>A full-stack web app that recommends the rewards credit card that maximizes cash back for a user's spending profile.</li>
+            <li>Django backend features and React components, with UI state connected to backend endpoints that return live recommendations.</li>
+            <li>Designed the relational schema for card offers, reward categories, and user spending data, including the table relationships and constraints every query relies on.</li>
+            <li>170+ Git commits, using branches and pull requests to keep the shared main branch stable.</li>
+          </ul>
+          <ul class="tags" aria-label="Tech used">
+            <li>Python</li><li>Django</li><li>React</li><li>SQL</li><li>Relational schema design</li><li>Git &amp; GitHub</li>
+          </ul>
+        </article>
       </div>
-      <div class="term-body">
-        <div class="term-query" id="term-query"></div>
-        <div class="term-result">
-          <div class="grid-dots" id="dots"></div>
-          <div class="term-status">
-            <span id="term-status-text">300+ rows loaded</span>
-            <button class="replay" id="replay" type="button">↺ run again</button>
-          </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="sub">Three years of keeping systems healthy and finding the cause when they are not.</p>
+      <div class="job">
+        <div class="when">May 2022 – Present</div>
+        <div>
+          <h3>IT Support Analyst (Volunteer)</h3>
+          <p class="org">Victory Bible Church International · Lorton, VA</p>
+          <ul>
+            <li>Analyzed three years of support-ticket data to find recurring root causes, then put preventive fixes and standard procedures in place that cut ticket volume by 25%.</li>
+            <li>Built and maintain infrastructure health reporting for continuous monitoring, which catches issues before outages.</li>
+            <li>Diagnose and resolve hardware, network, and application issues for technical and non-technical staff across departments, keeping systems at 99.9% uptime.</li>
+          </ul>
+          <ul class="tags skill" aria-label="Skills applied">
+            <li>Root-cause analysis</li><li>Ticket data analysis</li><li>Infrastructure monitoring</li><li>Hardware, network &amp; application troubleshooting</li><li>Process documentation</li>
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="job">
+        <div class="when">Jun 2022 – Aug 2023</div>
+        <div>
+          <h3>Resident Assistant</h3>
+          <p class="org">Global Friendship House · Norfolk, VA</p>
+          <ul>
+            <li>Analyzed resident feedback data to redesign programming, which raised participation by 25%.</li>
+          </ul>
+          <ul class="tags skill" aria-label="Skills applied">
+            <li>Data analysis</li><li>Feedback-driven design</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<!-- ABOUT + IMPACT -->
-<section class="about" id="about">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">// about</span><h2>The short version</h2></div>
-    <p class="reveal">I'm an early-career <strong>Data / Business Analyst</strong> with a B.S. in Computer Science (top 10% of my class) and hands-on skills in <strong>SQL, Python, and Excel</strong>. I build data pipelines, write multi-condition queries, and shape KPI-driven reports that turn raw data into decisions. Three years in technical operations taught me how to make data actually useful — analyzing patterns, building recurring reports, and delivering results people can measure. I'm a fast learner, a clear communicator, and CompTIA Security+ certified.</p>
-    <div class="stat-row" id="stat-row"></div>
-  </div>
-</section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="sub">What I work with, grouped by how I use it.</p>
+      <div class="skills">
+        <div><h3>Languages</h3><p>Python, Java, C++, JavaScript, SQL, HTML, CSS</p></div>
+        <div><h3>Frameworks &amp; data</h3><p>React, Django, SQLite, relational schema design, SQL joins and aggregations, query optimization, ETL pipelines, data modeling</p></div>
+        <div><h3>Engineering practices</h3><p>Data structures and algorithms, object-oriented programming, dependency injection, modular design, unit testing, debugging, peer code review, technical documentation, Agile</p></div>
+        <div><h3>Infrastructure &amp; tools</h3><p>Git, GitHub, CI/CD (Jenkins, GitHub Actions), Linux command line, continuous monitoring and alerting, Cursor</p></div>
+      </div>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills" class="band-light">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">// toolkit</span><h2>What I work with</h2></div>
-    <div class="skill-grid" id="skill-grid"></div>
-  </div>
-</section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <p class="sub">The full resume, with the tech used under each item.</p>
+      <div class="resume">
+        <h3>Albert Ayitey-Adjin</h3>
+        <p class="rl">Lorton, VA (open to relocation)</p>
+        <p class="rl">albertayiteyadjin@gmail.com · linkedin.com/in/albert-a-9995131ab · github.com/Al1374525</p>
 
-<!-- WORK -->
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">// selected work</span><h2>Projects</h2><p>Where I prove the craft — not just list the tools.</p></div>
-    <div id="project-list"></div>
-  </div>
-</section>
+        <h4>Summary</h4>
+        <p>Software engineer with a B.S. in Computer Science who builds full-stack applications and reliable, well-tested software in Python, React, and SQL. Currently building a Python anomaly-detection system designed for hardware sensor integration, and previously shipped a full-stack React/Django application backed by a custom relational database schema. Brings three years of technical operations experience in root-cause analysis, system monitoring, and 99.9% uptime. CompTIA Security+ certified and eligible to obtain a Secret clearance.</p>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="band-light">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">// experience</span><h2>Where I've delivered</h2></div>
-    <div class="xp" id="xp-list"></div>
-  </div>
-</section>
+        <h4>Projects</h4>
+        <p class="item">Environmental Early-Warning Anomaly Detector <span>· 2026 – Present</span></p>
+        <p class="tech">Python, OOP, dependency injection, unit testing, anomaly detection, monitoring and alerting</p>
+        <ul>
+          <li>Building a Python early-warning system that detects slow environmental failures by comparing live sensor readings against a rolling baseline and raising alerts.</li>
+          <li>Designed a modular, object-oriented architecture of five single-purpose components wired together with dependency injection, so the simulated sensor can be swapped for real hardware in one line.</li>
+          <li>Reproduced and fixed three detection failures: baseline drift that silenced active alerts (fixed by freezing the baseline during alerts), alerts that never cleared after recovery, and alert flicker at the threshold (fixed with hysteresis).</li>
+          <li>Kept detection logic in pure functions covered by unit tests and used explicit exceptions instead of silent defaults; expanding test coverage and adding a heartbeat health check.</li>
+        </ul>
+        <p class="item">BetterSwipe, Senior Capstone (team of 3) <span>· Dec 2023 – Dec 2024</span></p>
+        <p class="tech">Python, Django, React, SQL, Git</p>
+        <ul>
+          <li>Built a full-stack web application that recommends the optimal rewards credit card for a user's spending profile, maximizing cash-back return across card offers.</li>
+          <li>Developed Python/Django backend features and React front-end components, integrating UI state with backend endpoints to return live recommendation results.</li>
+          <li>Designed and implemented the relational database schema for card offers, reward categories, and user spending data, defining the table relationships and constraints used by all backend queries.</li>
+          <li>Collaborated across 170+ Git commits, using branches and pull requests to keep the shared main branch stable.</li>
+        </ul>
 
-<!-- EDUCATION + CERTS -->
-<section id="education">
-  <div class="wrap">
-    <div class="section-head reveal"><span class="eyebrow">// credentials</span><h2>Education &amp; certifications</h2></div>
-    <div class="duo" id="cred-list"></div>
-  </div>
-</section>
+        <h4>Experience</h4>
+        <p class="item">IT Support Analyst (Volunteer), Victory Bible Church International, Lorton, VA <span>· May 2022 – Present</span></p>
+        <p class="tech skill">Root-cause analysis, ticket data analysis, infrastructure health reporting, hardware, network and application troubleshooting</p>
+        <ul>
+          <li>Analyzed three years of support-ticket data to identify recurring root causes and risks, then implemented preventive fixes and standardized procedures that reduced ticket volume by 25%.</li>
+          <li>Built and maintained infrastructure health reporting for continuous monitoring of system status, catching issues before outages.</li>
+          <li>Diagnose and resolve hardware, network, and application issues across multiple departments, maintaining 99.9% system uptime.</li>
+        </ul>
+        <p class="item">Resident Assistant, Global Friendship House, Norfolk, VA <span>· Jun 2022 – Aug 2023</span></p>
+        <p class="tech skill">Data analysis, feedback-driven program design</p>
+        <ul>
+          <li>Analyzed resident feedback data to redesign programming, increasing participation by 25%.</li>
+        </ul>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap">
-    <span class="eyebrow on-dark">// let's talk</span>
-    <h2>Open to entry-level analyst roles</h2>
-    <p>If you're building a team and need someone who can take raw data and hand back a decision — I'd love to connect.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" data-email="text" href="#"></a>
-      <a class="btn btn-ghost" data-linkedin href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-ghost" data-github href="#" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</section>
+        <h4>Education</h4>
+        <p class="item">B.S. in Computer Science, Old Dominion University, Norfolk, VA <span>· 2024</span></p>
+        <p class="tech">Data Structures &amp; Algorithms, Databases &amp; SQL, Statistics (relevant coursework)</p>
 
-<footer>
-  <div class="wrap">
-    <span id="footer-loc"></span>
-    <span id="year"></span>
-  </div>
-</footer>
+        <h4>Certifications</h4>
+        <p>CompTIA Security+ · Google Cybersecurity Professional Certificate</p>
+      </div>
+    </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-<script src="js/data.js"></script>
-<script src="js/main.js"></script>
-<script src="js/charts.js"></script>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="sub">Open to entry-level software engineering roles. Email is the fastest way to reach me.</p>
+      <dl class="contact">
+        <div><dt>Email</dt><dd id="em">albertayiteyadjin@gmail.com</dd><button class="copy" type="button" id="cpy">Copy</button></div>
+        <div><dt>GitHub</dt><dd><a href="https://github.com/Al1374525">github.com/Al1374525</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href="https://linkedin.com/in/albert-a-9995131ab">linkedin.com/in/albert-a-9995131ab</a></dd></div>
+        <div><dt>Location</dt><dd>Lorton, VA · open to relocation</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer>Albert Ayitey-Adjin · Software Engineer</footer>
+</div>
+
+<script>
+(function(){
+  var b=document.getElementById('cpy'), t=document.getElementById('em');
+  if(!b||!t) return;
+  b.addEventListener('click',function(){
+    var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1600)};
+    var sel=function(){var r=document.createRange();r.selectNodeContents(t);var s=window.getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'};
+    try{navigator.clipboard.writeText(t.textContent).then(done,sel)}catch(e){sel()}
+  });
+})();
+</script>
 </body>
 </html>
+

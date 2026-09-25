@@ -1,54 +1,74 @@
-# Albert Ayitey-Adjin — Portfolio
+# Albert Ayitey-Adjin | Software Engineer Portfolio
 
-Personal portfolio site. Data / Business Analyst — SQL · Python · Excel.
+My personal portfolio site, focused on software engineering. It covers my projects, experience, skills, and full resume, with the tech used listed under each item.
 
-**Live:** _add your GitHub Pages link here after deploying_
+**Live site:** https://al1374525.github.io/albert-ayitey-adjin.github.io/
 
-## Architecture
+## What's on the site
 
-Zero build step. Static files, deployable anywhere (GitHub Pages, Vercel, Netlify).
+- **Hero:** a short intro as a software engineer (B.S. in Computer Science, Old Dominion University).
+- **Projects:**
+  - *Environmental Early-Warning Anomaly Detector* (Python, OOP, dependency injection, unit testing, anomaly detection, monitoring and alerting).
+  - *BetterSwipe*, a senior capstone (Python, Django, React, SQL, relational schema design, Git and GitHub).
+- **Experience:** IT Support Analyst (volunteer) and Resident Assistant. Roles without a coding stack list the skills applied instead of tools.
+- **Skills:** languages, frameworks and data, engineering practices, and infrastructure and tools.
+- **Resume:** the full resume on the page, with a tech line under each project and role.
+- **Contact:** email, GitHub, and LinkedIn.
 
+## What changed in this version
+
+- Repositioned from a data / business analyst portfolio to a **software engineering** portfolio.
+- Removed the Chelsea FC Midfield Recruitment Analytics project so the software projects lead.
+- Added the Anomaly Detector and BetterSwipe as featured projects, each with its tech tags.
+- Added a resume section with the tech used under each project and role.
+- Redesigned with a **Spider-Man-inspired palette**: near-black background with red and blue accents and a subtle web pattern in the hero.
+- Rebuilt as a single self-contained `index.html` (no build step, no framework).
+
+## Design
+
+| Token | Value | Use |
+|---|---|---|
+| Ink | `#0A0C16` | Page background |
+| Panel | `#111528` | Cards and resume block |
+| Red | `#E62429` | Primary accent, buttons, section rules |
+| Blue | `#2B4CB0` | Secondary accent, borders, web pattern |
+| Blue (soft) | `#8EA5FF` | Links and tech tags |
+
+Fonts (Google Fonts): Barlow Condensed for headings, IBM Plex Sans for body text, and JetBrains Mono for tags and labels. Colors and fonts are CSS variables at the top of `index.html`.
+
+## Tech
+
+- HTML, CSS, and a small amount of vanilla JavaScript (copy-email button)
+- Responsive layout that works from phone width up
+- Respects reduced-motion settings; keyboard focus states are visible
+- No dependencies or build tooling
+
+## Run locally
+
+Open `index.html` in a browser. To serve it locally instead:
+
+```bash
+python3 -m http.server 8000
 ```
-├── index.html        # structure only — almost never edit
-├── css/
-│   └── styles.css    # design tokens + components
-└── js/
-    ├── data.js       # ★ ALL content lives here — edit this file
-    ├── main.js       # rendering + interactions (terminal, counters, reveals)
-    └── charts.js     # interactive KPI radar (Chart.js) — self-contained
-```
 
-## Updating the site
+Then visit http://localhost:8000.
 
-Edit **`js/data.js`** only:
+## Deploy
 
-| Want to change… | Edit |
-|---|---|
-| Name, tagline, email, links | `SITE` |
-| Impact numbers | `STATS` |
-| Skills / "currently learning" | `SKILLS` |
-| Projects, status pills, case studies | `PROJECTS` |
-| Radar chart demo data | `RADAR` |
-| Jobs / bullets | `EXPERIENCE` |
-| Degree / certs | `CREDENTIALS` |
+The site is served by GitHub Pages from this repository.
 
-When the Chelsea repo goes public, paste its URL into `SITE.chelseaRepo` —
-the "View on GitHub" link appears automatically.
+1. Replace `index.html` with the new version.
+2. Commit and push to the branch Pages publishes from (usually `main`).
+3. Wait a minute or two, then reload the live site.
 
-To remove the chart entirely: delete `js/charts.js` and its `<script>` tag,
-and set `chart: false` on the project in `data.js`.
+## Editing content
 
-## Deploy (GitHub Pages)
+- **Add or change a project:** copy an `<article class="card">` block in the `#projects` section and edit the text and the tag list.
+- **Update the resume:** edit the `#resume` section. Each project and role has a `.tech` line for the tools or skills applied.
+- **Change colors:** edit the CSS variables in the `:root` block at the top of the file.
 
-1. Push these files to the repo root.
-2. Settings → Pages → Source: Deploy from a branch → `main` / `(root)` → Save.
-3. Live in ~2 minutes at the URL shown.
+## Contact
 
-## Interactions
-
-- **Hero terminal** — types the project's real SQL filter, "runs" it, and lights the
-  matching rows in a 200-dot grid (300+ → 15). Replayable.
-- **Impact counters** — animate on scroll.
-- **Case studies** — expandable Question / Approach / Insight panels per project.
-- **KPI radar** — toggleable candidate comparison (sample data, labeled as such).
-- Respects `prefers-reduced-motion`; keyboard focus visible throughout.
+- Email: albertayiteyadjin@gmail.com
+- GitHub: https://github.com/Al1374525
+- LinkedIn: https://linkedin.com/in/albert-a-9995131ab
